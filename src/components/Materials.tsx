@@ -1,0 +1,81 @@
+import cornImg from "@/assets/cornstarch.jpg";
+
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const materials = [
+  {
+    name: "Corn Starch",
+    pct: "40-50%",
+    role: "Primary Base",
+    desc: "Abundant, low-cost agricultural feedstock that forms the bag's compostable backbone.",
+    color: "bg-amber-100 text-amber-900",
+  },
+  {
+    name: "PLA (Polylactic Acid)",
+    pct: "20-30%",
+    role: "Strength",
+    desc: "Fermented plant sugars that deliver tensile strength and durability for everyday loads.",
+    color: "bg-emerald-100 text-emerald-900",
+  },
+  {
+    name: "PBAT",
+    pct: "20-30%",
+    role: "Flexibility",
+    desc: "Biodegradable polymer that adds flexibility and tear resistance — fully decomposes in soil.",
+    color: "bg-teal-100 text-teal-900",
+  },
+  {
+    name: "Natural Additives",
+    pct: "5-10%",
+    role: "Plasticizer",
+    desc: "Plant-based plasticizers and natural additives that fine-tune texture and performance.",
+    color: "bg-lime-100 text-lime-900",
+  },
+];
+
+const Materials = () => {
+  const { t } = useLanguage();
+
+  return (
+    <section id="materials" className="bg-muted/40 py-20 md:py-28">
+      <div className="container">
+        <div className="mb-16 grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-accent">{t("materials.kicker")}</p>
+            <h2 className="mb-6 text-4xl font-bold text-balance md:text-5xl">{t("materials.title")}</h2>
+            <p className="text-lg text-muted-foreground">{t("materials.sub")}</p>
+          </div>
+
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-full bg-accent/20 blur-3xl" />
+            <img
+              src={cornImg}
+              alt="Corn starch ingredients"
+              loading="lazy"
+              width={800}
+              height={800}
+              className="relative w-full rounded-3xl shadow-elegant"
+            />
+          </div>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {materials.map((material, index) => (
+            <div
+              key={material.name}
+              className="animate-fade-up rounded-2xl border border-border bg-card p-6 shadow-soft transition-smooth hover:-translate-y-1 hover:shadow-elegant"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className={`mb-4 inline-block rounded-full px-3 py-1 text-xs font-bold ${material.color}`}>{material.pct}</div>
+              <h3 className="mb-1 text-xl font-bold">{material.name}</h3>
+              <p className="mb-3 text-sm font-semibold text-accent">{material.role}</p>
+              <p className="text-sm text-muted-foreground">{material.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Materials;
