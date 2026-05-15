@@ -13,9 +13,9 @@ const Index = () => {
   const [open, setOpen] = useState(false);
   const onEnquire = () => setOpen(true);
   return (
-    <div className="min-h-screen bg-background">
+    <div className="flex min-h-dvh flex-col overflow-x-hidden bg-background">
       <Navbar onEnquire={onEnquire} />
-      <main>
+      <main className="min-w-0 flex-1 w-full">
         <Hero onEnquire={onEnquire} />
         <About />
         <Materials />

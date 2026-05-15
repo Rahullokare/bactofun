@@ -14,40 +14,69 @@ const Navbar = ({ onEnquire }: { onEnquire: () => void }) => {
     { href: "#sizes", label: t("nav.sizes") },
     { href: "#contact", label: t("nav.contact") },
   ];
+
+  const closeMenu = () => setOpen(false);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <nav className="container flex items-center justify-between py-4">
-        <a href="#" className="flex items-center gap-2 font-bold text-xl text-primary">
-          <span className="w-10 h-10 rounded-full gradient-leaf flex items-center justify-center shadow-soft">
-            <Leaf className="w-5 h-5 text-primary-foreground" />
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
+      <nav className="container flex min-h-14 items-center justify-between gap-3 py-3 sm:min-h-16 sm:py-4">
+        <a href="#" className="flex min-w-0 shrink items-center gap-2 font-bold text-primary">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full gradient-leaf shadow-soft sm:h-10 sm:w-10">
+            <Leaf className="h-4 w-4 text-primary-foreground sm:h-5 sm:w-5" />
           </span>
-          <span className="font-[Playfair_Display]">Vasundhara Compostable Bags</span>
+          <span className="truncate font-[Playfair_Display] text-base sm:text-lg md:text-xl">bactofun</span>
         </a>
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden items-center gap-4 md:flex lg:gap-6">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="text-sm font-medium text-foreground/80 hover:text-primary transition-smooth">
+            <a
+              key={l.href}
+              href={l.href}
+              className="text-sm font-medium text-foreground/80 transition-smooth hover:text-primary"
+            >
               {l.label}
             </a>
           ))}
           <LanguageSwitcher />
-          <Button variant="hero" size="sm" onClick={onEnquire}>{t("nav.enquire")}</Button>
+          <Button variant="hero" size="sm" onClick={onEnquire}>
+            {t("nav.enquire")}
+          </Button>
         </div>
-        <div className="md:hidden flex items-center gap-2">
-          <LanguageSwitcher />
-          <button className="p-2" onClick={() => setOpen(!open)} aria-label="Menu">
-            {open ? <X /> : <Menu />}
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2 md:hidden">
+          <LanguageSwitcher className="h-9 px-2 sm:px-3" />
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border"
+            onClick={() => setOpen(!open)}
+            aria-expanded={open}
+            aria-label="Menu"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </nav>
       {open && (
-        <div className="md:hidden border-t border-border bg-background">
-          <div className="container py-4 flex flex-col gap-4">
+        <div className="border-t border-border bg-background md:hidden">
+          <div className="container flex max-h-[calc(100dvh-4rem)] flex-col gap-3 overflow-y-auto py-4">
             {links.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-sm font-medium">
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={closeMenu}
+                className="rounded-md px-2 py-2.5 text-sm font-medium transition-smooth hover:bg-muted"
+              >
                 {l.label}
               </a>
             ))}
-            <Button variant="hero" onClick={() => { setOpen(false); onEnquire(); }}>{t("nav.enquire")}</Button>
+            <Button
+              variant="hero"
+              className="mt-1 w-full"
+              onClick={() => {
+                closeMenu();
+                onEnquire();
+              }}
+            >
+              {t("nav.enquire")}
+            </Button>
           </div>
         </div>
       )}

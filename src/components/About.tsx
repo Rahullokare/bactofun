@@ -10,30 +10,29 @@ const stats = [
 const About = () => {
   const { t } = useLanguage();
   return (
-  <section id="about" className="py-20 md:py-28">
-    <div className="container">
-      <div className="max-w-3xl mx-auto text-center mb-16">
-        <p className="text-accent font-semibold mb-3 uppercase tracking-wider text-sm">{t("about.kicker")}</p>
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-          {t("about.title")}
-        </h2>
-        <p className="text-lg text-muted-foreground text-balance">
-          {t("about.sub")}
-        </p>
-      </div>
-      <div className="grid md:grid-cols-3 gap-6">
-        {stats.map((s) => (
-          <div key={s.label} className="bg-card p-8 rounded-2xl shadow-soft text-center hover:shadow-elegant transition-smooth border border-border">
-            <div className="w-14 h-14 rounded-2xl gradient-leaf mx-auto mb-4 flex items-center justify-center">
-              <s.icon className="w-7 h-7 text-primary-foreground" />
+    <section id="about" className="section-padding scroll-mt-20 sm:scroll-mt-24">
+      <div className="container">
+        <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12 md:mb-16">
+          <p className="mb-2 text-xs font-semibold tracking-wider text-accent uppercase sm:mb-3 sm:text-sm">{t("about.kicker")}</p>
+          <h2 className="mb-4 text-balance text-3xl font-bold sm:mb-6 sm:text-4xl md:text-5xl">{t("about.title")}</h2>
+          <p className="text-base text-balance text-muted-foreground sm:text-lg">{t("about.sub")}</p>
+        </div>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+          {stats.map((s) => (
+            <div
+              key={s.label}
+              className="rounded-2xl border border-border bg-card p-6 text-center shadow-soft transition-smooth hover:shadow-elegant sm:p-8"
+            >
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl gradient-leaf sm:h-14 sm:w-14">
+                <s.icon className="h-6 w-6 text-primary-foreground sm:h-7 sm:w-7" />
+              </div>
+              <div className="mb-1 font-[Playfair_Display] text-2xl font-bold break-words text-primary sm:text-3xl">{s.value}</div>
+              <div className="text-sm text-muted-foreground">{s.label}</div>
             </div>
-            <div className="text-3xl font-bold text-primary mb-1 font-[Playfair_Display]">{s.value}</div>
-            <div className="text-sm text-muted-foreground">{s.label}</div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
   );
 };
 

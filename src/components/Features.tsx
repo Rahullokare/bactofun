@@ -13,15 +13,15 @@ const features = [
 const Features = () => {
   const { t } = useLanguage();
   return (
-  <section id="features" className="py-20 md:py-28">
+  <section id="features" className="section-padding scroll-mt-20 sm:scroll-mt-24">
     <div className="container">
-      <div className="text-center max-w-2xl mx-auto mb-16">
-        <p className="text-accent font-semibold mb-3 uppercase tracking-wider text-sm">{t("features.kicker")}</p>
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">{t("features.title")}</h2>
+      <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-12 md:mb-16">
+        <p className="mb-2 text-xs font-semibold tracking-wider text-accent uppercase sm:mb-3 sm:text-sm">{t("features.kicker")}</p>
+        <h2 className="mb-4 text-3xl font-bold text-balance sm:mb-6 sm:text-4xl md:text-5xl">{t("features.title")}</h2>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
         {features.map((f, i) => (
-          <div key={f.title} className="group bg-card p-8 rounded-2xl border border-border hover:border-primary hover:shadow-elegant transition-smooth animate-fade-up" style={{ animationDelay: `${i * 0.08}s` }}>
+          <div key={f.title} className="group animate-fade-up rounded-2xl border border-border bg-card p-6 transition-smooth hover:border-primary hover:shadow-elegant sm:p-8" style={{ animationDelay: `${i * 0.08}s` }}>
             <div className="w-14 h-14 rounded-xl bg-primary/10 group-hover:gradient-leaf flex items-center justify-center mb-5 transition-smooth">
               <f.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-smooth" />
             </div>

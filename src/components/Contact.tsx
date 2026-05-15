@@ -10,22 +10,22 @@ const team = [
 const Contact = ({ onEnquire }: { onEnquire: () => void }) => {
   const { t } = useLanguage();
   return (
-  <section id="contact" className="py-20 md:py-28 gradient-cream">
+  <section id="contact" className="section-padding scroll-mt-20 gradient-cream sm:scroll-mt-24">
     <div className="container">
-      <div className="text-center max-w-2xl mx-auto mb-14">
-        <p className="text-accent font-semibold mb-3 uppercase tracking-wider text-sm">{t("contact.kicker")}</p>
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">{t("contact.title")}</h2>
-        <p className="text-muted-foreground">{t("contact.sub")}</p>
+      <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-12 md:mb-14">
+        <p className="mb-2 text-xs font-semibold tracking-wider text-accent uppercase sm:mb-3 sm:text-sm">{t("contact.kicker")}</p>
+        <h2 className="mb-4 text-3xl font-bold text-balance sm:mb-6 sm:text-4xl md:text-5xl">{t("contact.title")}</h2>
+        <p className="text-sm text-muted-foreground sm:text-base">{t("contact.sub")}</p>
       </div>
-      <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2">
         {team.map((t) => (
-          <div key={t.role} className="bg-card rounded-3xl p-8 shadow-soft hover:shadow-elegant transition-smooth border border-border">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-2xl gradient-leaf flex items-center justify-center">
-                <User className="w-8 h-8 text-primary-foreground" />
+          <div key={t.role} className="rounded-2xl border border-border bg-card p-6 shadow-soft transition-smooth hover:shadow-elegant sm:rounded-3xl sm:p-8">
+            <div className="mb-5 flex items-center gap-3 sm:mb-6 sm:gap-4">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl gradient-leaf sm:h-16 sm:w-16">
+                <User className="h-7 w-7 text-primary-foreground sm:h-8 sm:w-8" />
               </div>
-              <div>
-                <h3 className="text-xl font-bold">{t.name}</h3>
+              <div className="min-w-0">
+                <h3 className="text-lg font-bold sm:text-xl">{t.name}</h3>
                 <p className="text-accent font-semibold text-sm">{t.role}</p>
               </div>
             </div>
@@ -46,8 +46,8 @@ const Contact = ({ onEnquire }: { onEnquire: () => void }) => {
           </div>
         ))}
       </div>
-      <div className="text-center mt-12">
-        <Button variant="hero" size="lg" onClick={onEnquire}>{t("cta.enquiry")}</Button>
+      <div className="mt-8 text-center sm:mt-12">
+        <Button variant="hero" size="lg" className="w-full sm:w-auto" onClick={onEnquire}>{t("cta.enquiry")}</Button>
       </div>
     </div>
   </section>

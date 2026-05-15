@@ -37,13 +37,13 @@ const Materials = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="materials" className="bg-muted/40 py-20 md:py-28">
+    <section id="materials" className="section-padding scroll-mt-20 bg-muted/40 sm:scroll-mt-24">
       <div className="container">
-        <div className="mb-16 grid items-center gap-12 lg:grid-cols-2">
-          <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-accent">{t("materials.kicker")}</p>
-            <h2 className="mb-6 text-4xl font-bold text-balance md:text-5xl">{t("materials.title")}</h2>
-            <p className="text-lg text-muted-foreground">{t("materials.sub")}</p>
+        <div className="mb-10 grid items-center gap-8 sm:mb-12 md:mb-16 md:gap-12 lg:grid-cols-2">
+          <div className="text-center lg:text-left">
+            <p className="mb-2 text-xs font-semibold tracking-wider text-accent uppercase sm:mb-3 sm:text-sm">{t("materials.kicker")}</p>
+            <h2 className="mb-4 text-3xl font-bold text-balance sm:mb-6 sm:text-4xl md:text-5xl">{t("materials.title")}</h2>
+            <p className="text-base text-muted-foreground sm:text-lg">{t("materials.sub")}</p>
           </div>
 
           <div className="relative">
@@ -54,12 +54,12 @@ const Materials = () => {
               loading="lazy"
               width={800}
               height={800}
-              className="relative w-full rounded-3xl shadow-elegant"
+              className="relative mx-auto w-full max-w-lg rounded-2xl shadow-elegant sm:max-w-none sm:rounded-3xl lg:mx-0"
             />
           </div>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
           {materials.map((material, index) => (
             <div
               key={material.name}

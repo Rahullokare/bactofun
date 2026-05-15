@@ -25,7 +25,7 @@ const EnquiryDialog = ({ open, onOpenChange }: { open: boolean; onOpenChange: (o
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-lg">
+      <DialogContent className="max-h-[min(90dvh,100%)] w-[calc(100%-1.5rem)] max-w-lg overflow-y-auto sm:w-full">
         <DialogHeader>
           <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full gradient-leaf">
             <Leaf className="h-6 w-6 text-primary-foreground" />
@@ -35,7 +35,7 @@ const EnquiryDialog = ({ open, onOpenChange }: { open: boolean; onOpenChange: (o
         </DialogHeader>
 
         <form onSubmit={onSubmit} className="space-y-4">
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             <div>
               <Label htmlFor="name">Name</Label>
               <Input id="name" required />
@@ -46,7 +46,7 @@ const EnquiryDialog = ({ open, onOpenChange }: { open: boolean; onOpenChange: (o
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             <div>
               <Label htmlFor="phone">Phone</Label>
               <Input id="phone" type="tel" required />
