@@ -141,6 +141,29 @@
     background: linear-gradient(180deg, oklch(0.98 0.02 95) 0%, oklch(1 0 0) 100%);
   }
 
+  .hero-shell {
+    background:
+      radial-gradient(circle at 14% 20%, rgba(240, 224, 170, 0.24), transparent 25%),
+      radial-gradient(circle at 78% 18%, rgba(223, 235, 170, 0.44), transparent 24%),
+      radial-gradient(circle at 88% 68%, rgba(239, 219, 167, 0.2), transparent 23%),
+      linear-gradient(180deg, #fffdf8 0%, #fffdf7 53%, #fff9ef 100%);
+  }
+
+  .hero-orb {
+    background: radial-gradient(circle, rgba(225, 237, 172, 0.46) 0%, rgba(225, 237, 172, 0) 68%);
+  }
+
+  .hero-orb-secondary {
+    background: radial-gradient(circle, rgba(248, 212, 145, 0.22) 0%, rgba(248, 212, 145, 0) 72%);
+  }
+
+  .hero-product-image {
+    mix-blend-mode: multiply;
+    mask-image: radial-gradient(ellipse at center, black 63%, rgba(0, 0, 0, 0.92) 74%, transparent 98%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 63%, rgba(0, 0, 0, 0.92) 74%, transparent 98%);
+    filter: drop-shadow(0 28px 42px rgba(112, 92, 38, 0.16)) saturate(0.94) brightness(1.015);
+  }
+
   .gradient-leaf {
     background: linear-gradient(135deg, oklch(0.55 0.14 145) 0%, oklch(0.42 0.12 155) 100%);
   }

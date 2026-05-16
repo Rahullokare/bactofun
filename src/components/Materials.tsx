@@ -1,34 +1,33 @@
 import cornImg from "@/assets/cornstarch.jpg";
-
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const materials = [
   {
-    name: "Corn Starch",
+    nameKey: "materials.card1.name",
     pct: "40-50%",
-    role: "Primary Base",
-    desc: "Abundant, low-cost agricultural feedstock that forms the bag's compostable backbone.",
+    roleKey: "materials.card1.role",
+    descKey: "materials.card1.desc",
     color: "bg-amber-100 text-amber-900",
   },
   {
-    name: "PLA (Polylactic Acid)",
+    nameKey: "materials.card2.name",
     pct: "20-30%",
-    role: "Strength",
-    desc: "Fermented plant sugars that deliver tensile strength and durability for everyday loads.",
+    roleKey: "materials.card2.role",
+    descKey: "materials.card2.desc",
     color: "bg-emerald-100 text-emerald-900",
   },
   {
-    name: "PBAT",
+    nameKey: "materials.card3.name",
     pct: "20-30%",
-    role: "Flexibility",
-    desc: "Biodegradable polymer that adds flexibility and tear resistance — fully decomposes in soil.",
+    roleKey: "materials.card3.role",
+    descKey: "materials.card3.desc",
     color: "bg-teal-100 text-teal-900",
   },
   {
-    name: "Natural Additives",
+    nameKey: "materials.card4.name",
     pct: "5-10%",
-    role: "Plasticizer",
-    desc: "Plant-based plasticizers and natural additives that fine-tune texture and performance.",
+    roleKey: "materials.card4.role",
+    descKey: "materials.card4.desc",
     color: "bg-lime-100 text-lime-900",
   },
 ];
@@ -62,14 +61,14 @@ const Materials = () => {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
           {materials.map((material, index) => (
             <div
-              key={material.name}
+              key={material.nameKey}
               className="animate-fade-up rounded-2xl border border-border bg-card p-6 shadow-soft transition-smooth hover:-translate-y-1 hover:shadow-elegant"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className={`mb-4 inline-block rounded-full px-3 py-1 text-xs font-bold ${material.color}`}>{material.pct}</div>
-              <h3 className="mb-1 text-xl font-bold">{material.name}</h3>
-              <p className="mb-3 text-sm font-semibold text-accent">{material.role}</p>
-              <p className="text-sm text-muted-foreground">{material.desc}</p>
+              <h3 className="mb-1 text-xl font-bold">{t(material.nameKey)}</h3>
+              <p className="mb-3 text-sm font-semibold text-accent">{t(material.roleKey)}</p>
+              <p className="text-sm text-muted-foreground">{t(material.descKey)}</p>
             </div>
           ))}
         </div>

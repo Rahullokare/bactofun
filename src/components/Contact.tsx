@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const team = [
-  { name: "Manoj Mayekar", role: "Partner", phone: "", email: "partner1@ganeshabag.in" },
-  { name: "Bhaskar Tupsundar", role: "Partner", phone: "9930469825", email: "partner2@ganeshabag.in" },
+  { name: "Manoj Mayekar", role: "Partner", phone: "8454864387", email: "mmayekar@bactofun.com" },
+  { name: "Bhaskar Tupsundar", role: "Partner", phone: "9930469825", email: "btupsundar@bactofun.com" },
 ];
 
 const Contact = ({ onEnquire }: { onEnquire: () => void }) => {
