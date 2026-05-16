@@ -5,6 +5,7 @@ import About from "@/components/About";
 import Materials from "@/components/Materials";
 import Features from "@/components/Features";
 import SizeCharts from "@/components/SizeCharts";
+import VisionImpact from "@/components/VisionImpact";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import EnquiryDialog from "@/components/EnquiryDialog";
@@ -20,6 +21,7 @@ const Index = () => {
         <About />
         <Materials />
         <Features />
+        <VisionImpact />
         <SizeCharts onEnquire={onEnquire} />
         <Contact onEnquire={onEnquire} />
       </main>
